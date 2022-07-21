@@ -114,6 +114,13 @@
             plane2.rotation.x=3.1415;
             plane2.position.x=-2.5;
             plane2.position.y = -1.5;
+            BABYLON.SceneLoader.ImportMesh("","https://cdn.jsdelivr.net/gh/landaed/unbounded-babylon-web@262a44cea89f0c395e1f3691588cfb7873b5c5f1/", "models/metaShadersLogo.glb", scene, function (newMeshes) {
+              newMeshes[0].setParent(plane2);
+              newMeshes[0].position = new BABYLON.Vector3(.55,-.5,-.1);
+              var scale = .1;
+              newMeshes[0].scaling = new BABYLON.Vector3(scale,scale,scale);
+              newMeshes[0].rotation = new BABYLON.Vector3(3.1415,3.1415,0);
+            });
 
             const plane3 = BABYLON.MeshBuilder.CreatePlane("plane3", {height:pw, width: pw});
             plane3.rotation.x=3.1415;
