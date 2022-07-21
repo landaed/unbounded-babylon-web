@@ -67,7 +67,7 @@
             });
 
             var maskMat = new BABYLON.StandardMaterial("maskMat", scene);
-            maskMat.alpha=.1;
+            maskMat.alpha=.0;
 
             const mask1 = BABYLON.MeshBuilder.CreatePlane("mask1", {height:1, width: 1});
             mask1.rotation.x=3.1415;
@@ -90,22 +90,22 @@
             mask3.position.y = -1.5;
             mask3.material = maskMat;
 
-
-            const plane1 = BABYLON.MeshBuilder.CreatePlane("plane1", {height:1, width: 1});
+            var pw = .9;
+            const plane1 = BABYLON.MeshBuilder.CreatePlane("plane1", {height:pw, width: pw});
             plane1.rotation.x=3.1415;
             plane1.position.x=-1.5;
             plane1.position.y = -1.5;
-            var simchopTex = new BABYLON.Texture("/textures/impact.png", scene);
+            var simchopTex = new BABYLON.Texture("https://cdn.jsdelivr.net/gh/landaed/unbounded-babylon-web@4a6f79b942976ec38a0bdda914c7e2b02e6eaeb4/images/SimChopIcon.png", scene);
             var simchopMat = new BABYLON.StandardMaterial("maskMat", scene);
             simchopMat.diffuseTexture = simchopTex;
             plane1.material = simchopMat;
 
-            const plane2 = BABYLON.MeshBuilder.CreatePlane("plane2", {height:1, width: 1});
+            const plane2 = BABYLON.MeshBuilder.CreatePlane("plane2", {height:pw, width: pw});
             plane2.rotation.x=3.1415;
             plane2.position.x=-2.5;
             plane2.position.y = -1.5;
 
-            const plane3 = BABYLON.MeshBuilder.CreatePlane("plane3", {height:1, width: 1});
+            const plane3 = BABYLON.MeshBuilder.CreatePlane("plane3", {height:pw, width: pw});
             plane3.rotation.x=3.1415;
             plane3.position.x=-3.5;
             plane3.position.y = -1.5;
