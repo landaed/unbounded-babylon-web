@@ -60,6 +60,8 @@
 
 
             var scene = new BABYLON.Scene(engine);
+
+
             let logo;
             BABYLON.SceneLoader.ImportMesh("","https://cdn.jsdelivr.net/gh/landaed/unbounded-babylon-web@85860bcfb8bfe8173c4e9efbcf5fc2da880bdcaf/", "models/logo.glb", scene, function (newMeshes) {
               logo = newMeshes[0];
@@ -100,6 +102,14 @@
             simchopMat.diffuseTexture = simchopTex;
             plane1.material = simchopMat;
 
+            BABYLON.SceneLoader.ImportMesh("","https://cdn.jsdelivr.net/gh/landaed/unbounded-babylon-web@1e6104da1c315b09b3e4204cb075692d17b5ae5e/", "models/simChopLogo.glb", scene, function (newMeshes) {
+              newMeshes[0].setParent(plane1);
+              newMeshes[0].position = new BABYLON.Vector3(pw/2.5,0,-.1);
+              var scale = .2;
+              newMeshes[0].scaling = new BABYLON.Vector3(scale,scale,scale);
+              newMeshes[0].rotation = new BABYLON.Vector3(3.1415,3.1415,0);
+            });
+
             const plane2 = BABYLON.MeshBuilder.CreatePlane("plane2", {height:pw, width: pw});
             plane2.rotation.x=3.1415;
             plane2.position.x=-2.5;
@@ -126,7 +136,7 @@
 
             let iTime = 0;
             var hemLight = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 1, 0), scene);
-
+            hemLight.intensity =2;
             var light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 1, 0), scene);
             light.diffuse = new BABYLON.Color3(.2,.2,1);
             light.specular = new BABYLON.Color3(0, .4, 1);
