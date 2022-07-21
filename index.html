@@ -98,7 +98,7 @@
             plane1.position.x=-1.5;
             plane1.position.y = -1.5;
             var simchopTex = new BABYLON.Texture("https://cdn.jsdelivr.net/gh/landaed/unbounded-babylon-web@4a6f79b942976ec38a0bdda914c7e2b02e6eaeb4/images/SimChopIcon.png", scene);
-            var simchopMat = new BABYLON.StandardMaterial("maskMat", scene);
+            var simchopMat = new BABYLON.StandardMaterial("simchopMat", scene);
             simchopMat.diffuseTexture = simchopTex;
             plane1.material = simchopMat;
 
@@ -109,15 +109,17 @@
               newMeshes[0].scaling = new BABYLON.Vector3(scale,scale,scale);
               newMeshes[0].rotation = new BABYLON.Vector3(3.1415,3.1415,0);
             });
-
+            var metaShadersMat = new BABYLON.StandardMaterial("metaShadersMat", scene);
+            metaShadersMat.diffuseColor = new BABYLON.Color3(.3, .3, 1);
             const plane2 = BABYLON.MeshBuilder.CreatePlane("plane2", {height:pw, width: pw});
             plane2.rotation.x=3.1415;
             plane2.position.x=-2.5;
             plane2.position.y = -1.5;
-            BABYLON.SceneLoader.ImportMesh("","https://cdn.jsdelivr.net/gh/landaed/unbounded-babylon-web@262a44cea89f0c395e1f3691588cfb7873b5c5f1/", "models/metaShadersLogo.glb", scene, function (newMeshes) {
+            plane2.material = metaShadersMat;
+            BABYLON.SceneLoader.ImportMesh("","https://cdn.jsdelivr.net/gh/landaed/unbounded-babylon-web@bd0f1f16f488490ef249de990b992951620c6559/", "models/metaShadersLogo.glb", scene, function (newMeshes) {
               newMeshes[0].setParent(plane2);
-              newMeshes[0].position = new BABYLON.Vector3(.55,-.5,-.1);
-              var scale = .1;
+              newMeshes[0].position = new BABYLON.Vector3(.8,-.7,-.1);
+              var scale = .14;
               newMeshes[0].scaling = new BABYLON.Vector3(scale,scale,scale);
               newMeshes[0].rotation = new BABYLON.Vector3(3.1415,3.1415,0);
             });
