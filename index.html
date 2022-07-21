@@ -38,7 +38,6 @@
         </style>
     </head>
 <body>
-    <p id="canvasZone"></p>
     <canvas id="renderCanvas"></canvas>
 
 
@@ -58,58 +57,153 @@
         var sceneToRender = null;
         var createDefaultEngine = function() { return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false}); };
         var createScene = function () {
-            var htmlBG = document.createElement("PRE");
-            htmlBG.style.zIndex = -1;
-            htmlBG.style.position = "absolute"
-            htmlBG.style.width = "100VW";
-            htmlBG.style.height = "100VH";
-            htmlBG.style.left = 0;
-            htmlBG.style.top = 0;
-            htmlBG.style.whiteSpace = "pre";
-            htmlBG.style.backgroundColor = "#000000";
-            htmlBG.innerText = "this is a test";
-            htmlBG.style.color = "white";
-            document.getElementById("canvasZone").appendChild(htmlBG);
-
 
 
             var scene = new BABYLON.Scene(engine);
+            let logo;
+            BABYLON.SceneLoader.ImportMesh("","https://cdn.jsdelivr.net/gh/landaed/unbounded-babylon-web@85860bcfb8bfe8173c4e9efbcf5fc2da880bdcaf/", "models/logo.glb", scene, function (newMeshes) {
+              logo = newMeshes[0];
+              logo.position.z=-5;
+            });
+
+            var maskMat = new BABYLON.StandardMaterial("maskMat", scene);
+            maskMat.alpha=.1;
+
+            const mask1 = BABYLON.MeshBuilder.CreatePlane("mask1", {height:1, width: 1});
+            mask1.rotation.x=3.1415;
+            mask1.position.z = .2;
+            mask1.position.x = -1.5;
+            mask1.position.y = -1.5;
+            mask1.material = maskMat;
+
+            const mask2 = BABYLON.MeshBuilder.CreatePlane("mask2", {height:1, width: 1});
+            mask2.rotation.x=3.1415;
+            mask2.position.z = .2;
+            mask2.position.x = -2.5;
+            mask2.position.y = -1.5;
+            mask2.material = maskMat;
+
+            const mask3 = BABYLON.MeshBuilder.CreatePlane("mask3", {height:1, width: 1});
+            mask3.rotation.x=3.1415;
+            mask3.position.z = .2;
+            mask3.position.x = -3.5;
+            mask3.position.y = -1.5;
+            mask3.material = maskMat;
 
 
-            // Make background clear.
-            scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
+            const plane1 = BABYLON.MeshBuilder.CreatePlane("plane1", {height:1, width: 1});
+            plane1.rotation.x=3.1415;
+            plane1.position.x=-1.5;
+            plane1.position.y = -1.5;
+            var simchopTex = new BABYLON.Texture("/textures/impact.png", scene);
+            var simchopMat = new BABYLON.StandardMaterial("maskMat", scene);
+            simchopMat.diffuseTexture = simchopTex;
+            plane1.material = simchopMat;
+
+            const plane2 = BABYLON.MeshBuilder.CreatePlane("plane2", {height:1, width: 1});
+            plane2.rotation.x=3.1415;
+            plane2.position.x=-2.5;
+            plane2.position.y = -1.5;
+
+            const plane3 = BABYLON.MeshBuilder.CreatePlane("plane3", {height:1, width: 1});
+            plane3.rotation.x=3.1415;
+            plane3.position.x=-3.5;
+            plane3.position.y = -1.5;
+            var col = .2;
+            scene.clearColor = new BABYLON.Color4(col,col,col, 1);
 
 
-            var camera = new BABYLON.ArcRotateCamera("camera1", 2.9, 1.0, 12.0, BABYLON.Vector3.Zero(), scene);
-            camera.attachControl(canvas, true);
-            var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
-            light.intensity = 0.7;
-            var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
-                sphere.position.y = 1;
-                sphere.position.x = 0;
-            var m = new BABYLON.StandardMaterial('smat', scene);
-            sphere.material = m;
-          //  light.excludedMeshes(sphere);
-            // TRY TO USE THIS SHAPE TO CUT A HOLE TO THE UNDERLYING HTML
-            m.alpha = 0.0;
-            m.alphaMode = BABYLON.Engine.ALPHA_DISABLE;
-            m.disableLighting = true;
+            var camera = new BABYLON.UniversalCamera("camera1", new BABYLON.Vector3(-2.5,0,5), scene);
+            camera.rotation.y = 3.1415;
 
+            var gl = new BABYLON.GlowLayer("glow", scene, {
+                mainTextureSamples: 4
+            });
+            const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {});
+            var glowMat = new BABYLON.StandardMaterial("glowMat", scene);
+            glowMat.emissiveColor = BABYLON.Color3.Teal();
+            sphere.material = glowMat;
 
-        	// Demonstrate the hole is working correctly with Z order of other objects.
-        	var s2 = BABYLON.Mesh.CreateSphere("sphere2", 16, 2, scene);
-        	s2.position.y = 1;
-        	s2.position.x = -2;
-        	s2.renderOverlay = true;
-        	s2.overlayColor.copyFromFloats(1,0,0)
+            let iTime = 0;
+            var hemLight = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 1, 0), scene);
 
-            var s3 = s2.createInstance();
-                s3.position.x = 2;
+            var light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+            light.diffuse = new BABYLON.Color3(.2,.2,1);
+            light.specular = new BABYLON.Color3(0, .4, 1);
+            light.intensity = 10;
 
+            scene.onBeforeRenderObservable.add(() => {
 
+              iTime+=.01;
+              if (logo) {
+              //  logo.position.y = camera.posi;
+              }
+              if(sphere){
+                sphere.position.y = Math.sin(iTime);
+                sphere.position.z = Math.cos(iTime)-5;
+                sphere.position.x = Math.cos(iTime)*2 -2.;
+                light.position = sphere.position;
+              }
+            });
 
-            // Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
-            var ground = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
+            window.addEventListener('mousemove', function(event){
+                let ray = scene.createPickingRay(scene.pointerX, scene.pointerY, BABYLON.Matrix.Identity(), null);
+                let hit = scene.pickWithRay(ray);
+                let pickedPoint = hit.pickedPoint;
+
+                if(hit && hit.pickedMesh){
+                  plane1.rotation.x=3.1415;
+                  plane1.rotation.y=0;
+                  plane1.rotation.z=0;
+
+                  plane2.rotation.x=3.1415;
+                  plane2.rotation.y=0;
+                  plane2.rotation.z=0;
+
+                  plane3.rotation.x=3.1415;
+                  plane3.rotation.y=0;
+                  plane3.rotation.z=0;
+                  const matrix = hit.pickedMesh.computeWorldMatrix(true);
+                  const global_position = BABYLON.Vector3.TransformCoordinates(pickedPoint, matrix);
+                  var finalPos = new BABYLON.Vector3(global_position.x/1,global_position.y/1,global_position.z/1);
+                  if(hit.pickedMesh == mask1){
+                    finalPos.x+=3;
+                  //  finalPos.y+=hit.pickedMesh.position.y;
+                    plane1.rotation.x = 3.1415+finalPos.y;
+                    plane1.rotation.y =finalPos.x;
+                    console.log(finalPos);
+                  }
+                  if(hit.pickedMesh == mask2){
+                    finalPos.x+=5;
+                  //  finalPos.y+=hit.pickedMesh.position.y;
+                    plane2.rotation.x = 3.1415+finalPos.y;
+                    plane2.rotation.y =finalPos.x;
+                    console.log(finalPos);
+                  }
+                  if(hit.pickedMesh == mask3){
+                    finalPos.x+=7;
+                  //  finalPos.y+=hit.pickedMesh.position.y;
+                    plane3.rotation.x = 3.1415+finalPos.y;
+                    plane3.rotation.y =finalPos.x;
+                    console.log(finalPos);
+                  }
+
+                }
+                else{
+                  plane1.rotation.x=3.1415;
+                  plane1.rotation.y=0;
+                  plane1.rotation.z=0;
+
+                  plane2.rotation.x=3.1415;
+                  plane2.rotation.y=0;
+                  plane2.rotation.z=0;
+
+                  plane3.rotation.x=3.1415;
+                  plane3.rotation.y=0;
+                  plane3.rotation.z=0;
+                }
+             });
+
 
             return scene;
 
