@@ -21,11 +21,18 @@ void main(void) {
     if(currSel ==2.){
       time*=5.;
     }
-    float d = position.y-centre.y;
-    pos.y-=sin(position.x*10.+(time))*.1*smoothstep(0.,.4,d);
 
+
+    pos.x *=smoothstep(0.0,1.,-pos.y)*3.;
+    pos.y *=3.;
+    pos.y+=1.;
+    float d = pos.y-centre.y;
+    pos.y-=sin(pos.x*10.+(time))*.2*smoothstep(0.,.4,d);
+    d = pos.y-centre.y;
+    pos.x-=sin(position.y*20.+(time))*.1*smoothstep(0.,.9,d);
+    pos.xy*=.8;
     //pos.y*=-1.;
     gl_Position = worldViewProjection * vec4(pos, 1.0);
-    vPositionW = position.xyz;
+    vPositionW = pos.xyz;
     vUV = uv;
 }

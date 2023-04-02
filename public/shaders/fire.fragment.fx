@@ -8,7 +8,7 @@ void main(void) {
     float l = 1.-smoothstep(2.,4.,length(vPositionW-lightPos));
     float d = vPositionW.y-centre.y;
   //  vec4 dynamicColor = texture2D(dynamicTexture, vUV);
-    vec3 col =mix(vec3(1,0,0),vec3(1,1,0),smoothstep(0.4,.0,d));
+    vec3 col =mix(vec3(1,0,0),vec3(1,1,0),smoothstep(0.1,-.5,d));
   //  col = mix(col,vec3(1,1,0),min(l,.5))*max(l,.5);
-    gl_FragColor = vec4(col,.5);//texture2D(textureSampler, vUV);
+    gl_FragColor = vec4(col,(1.-d)*.5);//texture2D(textureSampler, vUV);
 }
