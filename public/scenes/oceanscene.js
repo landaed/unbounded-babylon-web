@@ -32,7 +32,7 @@ light.intensity = 0.7;
 var ocean = BABYLON.MeshBuilder.CreateGround("ocean", {width: 600, height: 600, subdivisions: 256, updatable: true}, scene);
 var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 600, height: 600, subdivisions: 256, updatable: true}, scene);
 ground.position.y =10;
-var oceanShaderMat = new BABYLON.ShaderMaterial("shader", scene, "./oceanShader", {
+var oceanShaderMat = new BABYLON.ShaderMaterial("shader", scene, "./shaders/oceanShader", {
   attributes: ["position", "normal", "uv", "colour1", "colour2"],
   uniforms: [
       "world", "worldView", "worldViewProjection", "view",
@@ -41,7 +41,7 @@ var oceanShaderMat = new BABYLON.ShaderMaterial("shader", scene, "./oceanShader"
   defines: ["NORMAL"]
 });
 
-var groundShaderMat = new BABYLON.ShaderMaterial("shader", scene, "./groundShader", {
+var groundShaderMat = new BABYLON.ShaderMaterial("shader", scene, "./shaders/groundShader", {
   attributes: ["position", "normal", "uv", "colour1", "colour2"],
   uniforms: [
       "world", "worldView", "worldViewProjection", "view",
