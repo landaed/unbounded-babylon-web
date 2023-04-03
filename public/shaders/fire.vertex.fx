@@ -27,7 +27,7 @@ void main(void) {
     pos.y *=3.;
     pos.y+=1.;
     float d = pos.y-centre.y;
-    pos.y-=sin(pos.x*10.+(time))*.2*smoothstep(0.,.4,d);
+    pos.y-=sin(pos.x*10.+(time))*.2 *smoothstep(0.,.4,d);
     d = pos.y-centre.y;
     pos.x-=sin(position.y*20.+(time))*.1*smoothstep(0.,.9,d);
     pos.xy*=.8;

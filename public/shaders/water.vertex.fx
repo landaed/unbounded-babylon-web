@@ -16,7 +16,7 @@ void main(void) {
     float time = iTime;
   //  pos.x*=2.;
     if(currSel ==1.){
-      time*=5.;
+      time*=10.;
     }
     pos.y-=sin(position.x*10.+(time))*.1;
 

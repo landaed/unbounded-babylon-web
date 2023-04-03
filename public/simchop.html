@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>Babylon.js sample code</title>
+
+        <!-- Babylon.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+        <script src="https://assets.babylonjs.com/generated/Assets.js"></script>
+        <script src="https://preview.babylonjs.com/ammo.js"></script>
+        <script src="https://preview.babylonjs.com/cannon.js"></script>
+        <script src="https://preview.babylonjs.com/Oimo.js"></script>
+        <script src="https://preview.babylonjs.com/earcut.min.js"></script>
+        <script src="https://preview.babylonjs.com/babylon.js"></script>
+        <script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+        <script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
+        <script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+        <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+        <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+        <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
+        <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+
+        <style>
+            @font-face {
+              font-family: 'Nulshock Rg';
+              src: url('/nulshock/nulshock bd.otf') format('opentype');
+              font-weight: bold;
+              font-style: normal;
+            }
+            .container {
+        			height: calc(100% - 240px);
+        			overflow: auto;
+        		}
+            p {
+              font-size: 20px;
+              color: white;
+              line-height: 1.5;
+              margin: 20px;
+            }
+            h1 {
+              font-family: 'Nulshock Rg', sans-serif;
+              font-size: 32px;
+              color: blue;
+              line-height: 1.5;
+              margin: 20px;
+            }
+            h2 {
+              font-family: 'Nulshock Rg', sans-serif;
+              font-size: 32px;
+              color: red;
+              line-height: 1.5;
+              margin: 20px;
+            }
+            a {
+              font-family: 'Nulshock Rg', sans-serif;
+              font-size: 32px;
+              color: red;
+              line-height: 1.5;
+              margin: 0px;
+            }
+
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: rgb(51, 51, 51);
+            }
+
+            #renderCanvas {
+                width: 100%;
+                height: calc(100% - 180px);
+                touch-action: manipulation;
+                user-select: none;
+            }
+            nav {
+              background-color: #333;
+              font-family: 'Nulshock Rg', sans-serif;
+              font-size: 32px;
+              text-align: center;
+              z-index: 1;
+            }
+
+            nav ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+            }
+
+            nav li {
+              display: inline-block;
+              margin: 0 10px;
+            }
+
+            nav a {
+              display: block;
+              color: #fff;
+              text-decoration: none;
+              padding: 0px 20px;
+              transition: background-color 0.5s ease;
+            }
+
+            nav a:hover {
+              background-color: #555;
+            }
+            .red {
+              color: black;
+            }
+
+            .blue {
+              color: black;
+            }
+
+            @media screen and (max-height: 200px) {
+              nav {
+                font-size: 64px;
+                display: block;
+              }
+              #renderCanvas {
+                  width: 100%;
+                  height: calc(100% - 240px);
+                  touch-action: manipulation;
+                  user-select: none;
+              }
+            }
+
+
+
+        </style>
+    </head>
+<body>
+    <nav>
+      <li><a href="index.html"><span class="red">Un</span><img src="images/mirror.png" alt="Description of the image"><span class="blue">bounded</span></a></li>
+
+      <ul class="nav ul">
+        <li><a href="research.html">Research</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+
+  <div class="container">
+    <h1>Real-time Level-Surface Volumetric Simulation Reductions: SimChop</h1>
+    <h2><a href="https://www.gdcvault.com/play/1026993/Technical-Artist-Summit-Real-Time">GDC Presentation Slides</a>
+</h2>
+      <p>
+
+      SimChop is a real-time volumetric simulation reduction technique that utilizes level surfaces to optimize computational efficiency. Rendering volumetric simulations can be computationally expensive, particularly when attempting to represent the flow of a fluid with a high number of droplets. Traditionally, this has been done using spheres, which can be computationally taxing to render. By using cross sections, or level surfaces, of the sphere instead, the computational cost can be greatly reduced.
+    </p>
+    <p>
+      The logic behind this is that it is computationally less expensive to render a 2D shape than a 3D shape. The more level surfaces of the geometry used, the closer it can approximate the original sphere. Similarly, by controlling the amount of vertices on a given level surface, the bounds of computation can be fine-tuned to the hardware or situation. By reducing fidelity in terms of the number of level surfaces or the number of vertices on a given level surface, efficiency can be increased.
+    </p>
+    <p>
+      The SimChop project proposed three different implementations for level-surface volumetric simulation reductions: arrays, octrees, and interleaving. A special version of an octree was used that allows for hash indexing, using Morton codes as hash table keys. The interleaving model was an improvement on the octree, utilizing a Z-order curve of particles based on interleaving binary digits for x, y, and z values. This enables queries through a subvolume to be restricted to similar octants as octrees, allowing for efficient splitting of a volume into dimensions recursively.
+    </p>
+    <p>
+      The Morton codes provide indices that describe the Z-order curve, which can be sorted quickly with Unity Jobs or searched using binary search in a shader. When the volume is split into dimensions recursively, it is possible to use binary to split a volume recursively, similar to octants. Morton codes give indices that describe the Z-order curve, and more than 32 bits means splitting across colors. The volume side-length is divided by 2k for cell size, and the Morton code would then have 3k bits. Double interleaving provides a slight speed-up by passing in two Texture3D, one shifted half a cell.
+    </p>
+    <p>
+      Level surfaces were also found to be useful for debugging shaders. In isolation, the octree with an indirection pool was able to handle 900 collidable particles and 20 level surfaces at approximately 30 frames per second on an NVIDIA RTX 2060. The octree with hashed indexing was able to handle 2500 collidable particles and 50 level surfaces at approximately 40 frames per second on an NVIDIA RTX 3070. In isolation, double interleaving was able to handle 3000 collidable particles and 30 level surfaces at approximately 50 frames per second on an NVIDIA RTX 3070.
+    </p>
+    <p>
+      One of the main advantages of SimChop is that it increases the capacity for interactivity in volumetric simulations. Other approaches project 3D simulations onto 2D surfaces, resulting in very realistic visuals but limited interactivity. With SimChop, while visual fidelity may be lower, the capacity for interactions is increased as the simulation still occurs in 3D rather than being projected onto a 2D surface.
+    </p>
+    <p>
+      There are some limitations to SimChop, such as the fact that the radius of particles is limited by the octant sizes (and currently only one size particle is supported). Colliders interact with Unity Physics, but these calculations can add up for large numbers of particles. Additionally, global arrays have a maximum number of elements, and forced values across color channels may be required. Intersections with other flat geometry may also show sharp edges, and camera zoom-in and -out may cause changes in FPS. The interleaving model was an improvement on the octree approach. It utilizes a Z-order curve of particles based on interleaving binary digits for the x, y, and z values. Queries through a subvolume are restricted to similar octants as in octrees. For example, the last three digits are set to 0 and then iterated or incremented until the last three digits are all 1. Using binary allows for splitting a volume recursively, where each dimension is halved, similar to octants. Morton codes give indices that describe the Z-order curve. Quicksort with Unity Jobs or binary search in shader was used to optimize the processing. The left figure in the image above visualizes binary search for 250 particles. More than 32 bits would mean splitting across colors. The volume side-length is divided by 2k for cell size, where Morton code would then have 3k bits. Level surfaces were quite useful for debugging the shader.
+    </p>
+    <p>
+      The data structures in the interleaving model include two interleaving texture 3D. A slight speed-up is achieved with double interleaving by passing in two Texture3D, one shifted half a cell.
+    </p>
+    <p>
+      The results of our SimChop technology are impressive. In isolation, the octree with indirection pool can handle 900 collidable particles and 20 level surfaces, achieving about 30 fps on an NVIDIA RTX 2060. In isolation, the octree with hashed indexing can handle 2500 collidable particles and 50 level surfaces, achieving about 40 fps on an NVIDIA RTX 3070. In isolation, double interleaving can handle 3000 collidable particles and 30 level surfaces, achieving about 50 fps on an NVIDIA RTX 3070.
+    </p>
+    <p>
+      Despite these successes, there are some limitations to our approach. The radius of particles is limited by the octant sizes, and currently, only one size of particle is used. Colliders interacting with Unity Physics calculations can add up for large numbers of particles. We also use global arrays with a maximum number of elements or forced values across color channels. Intersections with other flat geometry show sharp edges, and camera zoom-in and zoom-out causes changes in fps. Estimates above heavily depend on the configuration of the radius, resolution of data structures, and other factors.
+    </p>
+    <p>
+      In conclusion, our SimChop technology has successfully reduced the computational cost of real-time volumetric simulations by utilizing level surfaces instead of spheres. This approach lowers visual fidelity but significantly increases the capacity for interactivity as the simulation still occurs in 3D, not projected to 2D surfaces. The three implementations of arrays, octrees, and interleaving were tested, and the interleaving model proved to be the most effective. While there are limitations to our approach, we believe that our SimChop technology has great potential for real-time volumetric simulations in various industries.
+      </p>
+    </div>
+
+</body>
+</html>
