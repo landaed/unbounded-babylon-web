@@ -27,7 +27,37 @@ section, summary, time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
+	.circular-image {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 200px;
+	  height: 200px;
+	  object-fit: cover;
+	  border-radius: 50%;
+	  overflow: hidden;
+	  object-position: 50% -10px;
+	}
+.container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+      }
 
+.interests {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
 body {
 	line-height: 1;
 }
