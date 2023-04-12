@@ -21,9 +21,9 @@
   <nav>
     <ul>
       <li><a href="assets.html">Assets</a></li>
-      <li><a href="partner.html" class="active">Service</a></li>
+      <li><a href="partner.html">Service</a></li>
       <li><a href="about_us.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
     </ul>
   </nav>
 </header>
@@ -50,37 +50,75 @@
 							  <li><a href="#SimChop" class="button" onclick="smoothScroll(event, 'SimChop')">SimChop</a></li>
 								<li><a href="#meta-shaders" class="button" onclick="smoothScroll(event, 'meta-shaders')">Meta Shaders</a></li>
 								<li><a href="#wfc" class="button" onclick="smoothScroll(event, 'wfc')">Wave Function Collapse</a></li>
+								<li><a href="#Digraph-Colouring" class="button" onclick="smoothScroll(event, 'Digraph-Colouring')">Digraph Colouring</a></li>
 							</ul>
 							<h1 class="major">Research</h1>
 
 							<a id="SimChop" style="position: relative; top: -100px;"></a>
 							<h2 class="major">SimChop</h2>
-							 <div>
+							<ul class="actions">
+							 <li><div class="researchPanel">
 								 <p>New results of volumetric simulations typically involve rendering times that are beyond the reach of using their effects in real-time graphics. Visualizing the particles and fluid surfaces with level surfaces provides a way to reduce the computations needed so that it is still possible to see other geometries interact in depth.</p>
 								 <a href="https://www.gdcvault.com/play/1026993/Technical-Artist-Summit-Real-Time" class="button" style="transform: translateY(-20px);">Learn More</a>
-							 </div>
+							 	</div></li>
+								<li>
+							 	<img src="images/SimChopIcon.png" width="300" height="300" alt="A beautiful landscape" style="left: 50%; position: relative; transform: translateX(-180px)">
+							 </li>
+							 </ul>
+
 							 <a id="meta-shaders" style="position: relative; top: -100px;"></a>
  							 <h2 class="major">Meta Shaders</h2>
-							 <p>We present an implementation of meta-shaders by adapting a commonly known data structure to pass into shaders: planar graphs.This allows for an arbitrary flexibility in design where the faceregions that partition a surface can be individually and uniquelyshaded, or in combinations, as desired. Considering a wide variety of systems mixing 2D and 3D across multiple industries, theapplications of meta-shaders opens up a new area of design and user-interaction possibilities in computer graphics</p>
-							 <a href="https://www.gdcvault.com/play/1026993/Technical-Artist-Summit-Real-Time" class="button" style="transform: translateY(-20px);">Learn More</a>
+
+							 <ul class="actions">
+							 	<li><div class="researchPanel">
+							 	<p>We present an implementation of meta-shaders by adapting a commonly known data structure to pass into shaders: planar graphs.This allows for an arbitrary flexibility in design where the faceregions that partition a surface can be individually and uniquelyshaded, or in combinations, as desired. Considering a wide variety of systems mixing 2D and 3D across multiple industries, theapplications of meta-shaders opens up a new area of design and user-interaction possibilities in computer graphics</p>
+								</div>
+							  <a href="meta-graphs-SIGGRAPH-conf-paper.pdf" class="button" style="transform: translateY(-20px);">Learn More</a>
+						    </li>
+								<li>
+							 	<img src="images/metaShaderGif.gif"  width="300" height="300" alt="A beautiful landscape" style="left: 50%; position: relative; transform: translateX(-180px)">
+							 </li>
+						   </ul>
+
+
 							 <a id="wfc" style="position: relative; top: -100px;"></a>
 							 <h2 class="major">Wave Function Collapse</h2>
-							 <p>In addition to our subcontracting and consulting services, Unbounded Research and Development (Unbounded R&D) is enthusiastic about forming collaborative partnerships with other VFX and gaming studios. We understand the value of synergy and are eager to combine our expertise in computer graphics with the unique strengths of our partners. This approach allows us to work closely on projects and co-develop innovative solutions that surpass industry standards.</p>
-							 <p>At Unbounded R&D, we believe in fostering long-term relationships that drive mutual growth and success. By partnering with us, you can leverage our cutting-edge graphics research and technology to elevate your projects, explore new creative possibilities, and redefine the boundaries of visual storytelling. Join forces with Unbounded R&D and let's shape the future of the VFX and gaming industries together.</p>
-						 	 <a href="https://www.gdcvault.com/play/1026993/Technical-Artist-Summit-Real-Time" class="button" style="transform: translateY(-20px);">Learn More</a>
+							 <ul class="actions">
+							 	<li><div class="researchPanel">
+							  <p>In addition to our subcontracting and consulting services, Unbounded Research and Development (Unbounded R&D) is enthusiastic about forming collaborative partnerships with other VFX and gaming studios. We understand the value of synergy and are eager to combine our expertise in computer graphics with the unique strengths of our partners. This approach allows us to work closely on projects and co-develop innovative solutions that surpass industry standards.</p>
+								<a href="ACM_Conference_Proceedings_Primary_Article_Template.pdf" class="button" style="transform: translateY(-20px);">Learn More</a>
+								</div></li>
+								<li>
+								<img src="images/wfc.png" width="300" height="300" alt="A beautiful landscape" style="left: 50%; position: relative; transform: translateX(-180px)">
+							</li>
+							 </ul>
+
+
+							 <a id="Digraph-Colouring" style="position: relative; top: -100px;"></a>
+							 <h2 class="major">Digraph Colouring</h2>
+							 <ul class="actions">
+							  <li><div class="researchPanel">
+							 <p>Several possible definitions of local injectivity for a homomorphism of an oriented graph G to an oriented graph H are considered. In each case, we determine the complexity of deciding whether there exists such a homomorphism when G is given and H is a fixed tournament on three or fewer vertices. Each possible definition leads to a locally-injective oriented colouring problem. A dichotomy theorem is proved in each case.</p>
+							 </div>
+						 <a href="https://www.scirp.org/journal/paperinformation.aspx?paperid=121086" class="button" style="transform: translateY(-20px);">Learn More</a></li>
+						 		<li>
+							 <img src="images/digraph.png" width="300" height="300" alt="A beautiful landscape" style="left: 50%; position: relative; transform: translateX(-180px)">
+						 </li>
+							</ul>
+
 						</div>
 					</section>
 
 			</div>
 
 		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; Russell Campbell, Eli Landa, Michael Morris. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

@@ -3952,7 +3952,10 @@ input, select, textarea {
 				#intro p {
 					font-size: 1em;
 				}
-
+				.researchPanel{
+					max-width: 900px;
+					text-align: left;
+				}
 			}
 
 		@media screen and (max-width: 1280px) {
@@ -3961,4 +3964,8 @@ input, select, textarea {
 				background-attachment: scroll;
 			}
 
+		}
+		.researchPanel{
+			max-width: 700px;
+			text-align: left;
 		}
