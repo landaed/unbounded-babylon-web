@@ -29,8 +29,6 @@ footer, header, hgroup, menu, nav, section {
 	display: block;}
 	.circular-image {
 	  display: block;
-	  margin-left: auto;
-	  margin-right: auto;
 	  width: 200px;
 	  height: 200px;
 	  object-fit: cover;
@@ -39,8 +37,6 @@ footer, header, hgroup, menu, nav, section {
 	  object-position: 50% -10px;
 	}
 .container {
-          max-width: 800px;
-          margin: 0 auto;
           padding: 20px;
       }
 

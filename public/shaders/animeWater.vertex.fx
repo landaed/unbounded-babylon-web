@@ -11,8 +11,7 @@ varying vec2 vUV;
 varying vec3 vPositionW;
 void main(void) {
     vec3 pos = position;
-  //  pos.x *=2.;
-  //  pos.z *=.2;
+    pos.x-=sin(pos.y*4.)*.5;
     gl_Position = worldViewProjection * vec4(pos, 1.0);
     vPositionW = position.xyz;
     vUV = uv;
