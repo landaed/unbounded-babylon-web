@@ -10,7 +10,7 @@
 		<title>Unbounded Research and Development</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css"/>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
 		<script src="https://assets.babylonjs.com/generated/Assets.js"></script>
@@ -28,144 +28,125 @@
 		<script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
 	</head>
 	<body class="is-preload">
-
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+		<header id="header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;">
+			<a href="index.html"><span class="red">Un</span><img src="images/mirror.png" alt="Description of the image" width="20px" height="30px"><span class="blue">bounded</span></a>
+			<nav>
+				<ul>
+					<li><a href="assets.html">Assets</a></li>
+					<li><a href="partner.html">Service</a></li>
+					<li><a href="about_us.html">About</a></li>
+					<li><a href="research.html">Research</a></li>
+					<li><a href="innovation.html">Innovation</a></li>
+				</ul>
+			</nav>
+		</header>
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div id="text-overlay">
-							<h1><a><span class="red">Un</span><img src="images/mirror.png" alt="Description of the image"><span class="blue">bounded</span></a></h1>
-							<p>Research and Development</p>
+			<!-- Intro -->
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<div id="text-overlay" style="margin-left: 10em;">
+					<h1><a><span class="red">Un</span><img src="images/mirror.png" alt="Description of the image"><span class="blue">bounded</span></a></h1>
+					<p>Research and Development</p>
+					<ul class="actions">
+						<li><a href="#about" class="button scrolly">Learn more</a></li>
+					</ul>
+				</div>
+				<canvas id="renderCanvas"></canvas>
+				<script src="/scene.js"></script>
+			</section>
+
+			<!-- Innovation Lab -->
+			<section class="wrapper style1-alt fade-up">
+				<div class="inner leftMarginAlign">
+					<h2 id="innovation">Innovation Lab</h2>
+						<section>
+							<span class="icon solid major fa-graduation-cap"></span>
+							<h3>Mentorship Program</h3>
+							<p>Unleash your potential with our mentorship programs. Here, knowledge meets innovation, and technical skills intertwine with vital soft skills. Whether it's AI, graphics, or beyond, our tailored approach empowers you to master your field. Click here to explore more and start your transformative journey.</p>
 							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
+								<li><a href="innovation.html" class="button">Learn more</a></li>
+							</ul>
+						</section>
+					</div>
+			</section>
+
+			<section class="wrapper style2 spotlights">
+
+				<!-- Who We Are -->
+				<section>
+					<a href="#" class="image"><img src="images/SimChopIcon.png" alt="" data-position="center center" /></a>
+					<div class="content">
+						<div class="inner leftMarginAlign">
+							<h2 id="about">Who We Are</h2>
+							<p>We are a dedicated team of researchers and scientists developing the next generation in computer graphics technology.</p>
+							<ul class="actions">
+								<li><a href="about_us.html" class="button">Learn more</a></li>
 							</ul>
 						</div>
-						<canvas id="renderCanvas"></canvas>
-				    <script src="/scene.js"></script>
-					</section>
+					</div>
+				</section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/SimChopIcon.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Who We Are</h2>
-									<p>We are a dedicated team of researchers and scientists developing the next generation in computer graphics technology.</p>
-									<ul class="actions">
-										<li><a href="about_us.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>What we do</h2>
-								<section>
-									<span class="icon solid major fa-cube"></span>
-									<h3>Develop Asset Packs</h3>
-									<p>Developing films and games is hard and time consuming. Not every indie has the time, or knowledge to develop their own shaders and graphics. Thats where we come in.</p>
-									<ul class="actions">
-										<li><a href="assets.html" class="button">Learn more</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-handshake"></span>
-									<h3>Work With You</h3>
-									<p>We are here to help you and your team meet your graphics needs. We are capabable of working with teams of any size improve or develop their graphics pipelines.</p>
-									<ul class="actions">
-										<li><a href="partner.html" class="button">Learn more</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Research</h3>
-									<p>As a research and development company, we have developed several technologies at the cutting edge.</p>
-									<ul class="actions">
-										<li><a href="research.html" class="button">Learn more</a></li>
-									</ul>
-								</section>
-							</div>
-
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>We look forward to hearing from you.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>1409 West 7th Avenue<br />
-											Vancouver, BC, V6H-4H2<br />
-											Canada</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="team@unboundedresearch.dev">team@unboundedresearch.dev</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(604) 348 7108</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
+				<!-- What We Do -->
+				<section class="wrapper style2-alt fade-up">
+					<div class="inner leftMarginAlign">
+						<h2 id="work">What We Do</h2>
+							<section>
+								<span class="icon solid major fa-cube"></span>
+								<h3>Develop Asset Packs</h3>
+								<p>Developing films and games is hard and time consuming. Not every indie has the time, or knowledge to develop their own shaders and graphics. Thats where we come in.</p>
+								<ul class="actions">
+									<li><a href="assets.html" class="button">Learn more</a></li>
+								</ul>
+							</section>
+							<section>
+								<span class="icon solid major fa-handshake"></span>
+								<h3>Work With You</h3>
+								<p>We are here to help you and your team meet your graphics needs. We are capabable of working with teams of any size improve or develop their graphics pipelines.</p>
+								<ul class="actions">
+									<li><a href="partner.html" class="button">Learn more</a></li>
+								</ul>
+							</section>
+							<section>
+								<span class="icon solid major fa-code"></span>
+								<h3>Research</h3>
+								<p>As a research and development company, we have developed several technologies at the cutting edge.</p>
+								<ul class="actions">
+									<li><a href="research.html" class="button">Learn more</a></li>
+								</ul>
+							</section>
 						</div>
-					</section>
+				</section>
 
-			</div>
+			</section>
+
+			<!-- Get in touch -->
+			<section class="wrapper style1 fade-up">
+				<div class="inner leftMarginAlign">
+					<h2 id="contact">Get in touch</h2>
+					<p>We look forward to hearing from you.</p>
+					<section>
+						<ul class="contact">
+							<li>
+								<h3>Address</h3>
+								<span>35887 Marshall Road<br />
+								Abbostford, BC, V3G-1G1<br />
+								Canada</span>
+							</li>
+							<li>
+								<h3>Email</h3>
+								<a href="team@unboundedresearch.dev">team@unboundedresearch.dev</a>
+							</li>
+							<li>
+								<h3>Phone</h3>
+								<span>(604) 309 1867</span>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</section>
+		</div>
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">

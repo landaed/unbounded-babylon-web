@@ -1,0 +1,334 @@
+.scroll-section h1{
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #FFC35D;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* For WebKit-based browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: black; /* Set the background color of the scrollbar track */
+    border-radius: 0px; /* Add this line to maintain the rounded edges of the rectangle */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #B27483; /* Set the background color of the scrollbar thumb */
+    border-radius: 4px; /* Round off the edges of the scrollbar thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #FFC35D; /* Change the background color of the scrollbar thumb when hovered */
+}
+
+.homeList li {
+  background-color: #B27483;
+  border: none;
+  color: white;
+  text-align: left;
+  align-items: center;
+  font-size: 1em;
+  margin-bottom: 10px;
+  margin-left: -40px;
+  padding: 10px;
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  min-height: 30px;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+}
+
+.scroll-section {
+    position: relative;
+    background-color: #312450;
+    padding: 50px;
+    text-align: left;
+}
+
+.scroll-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #FFC35D;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding-bottom: 50%; /* 315px / 512px */
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* Adjust the values below to set the cropping area */
+  top: -40px;
+  left: -10px;
+  bottom: -300px;
+}
+
+.container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+h1 {
+    font-size: 3em;
+    color: white;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.rectangle-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.rectangle {
+    background-color: #454545;
+    width: 300px;
+    height: 320px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Add this line to round off the edges */
+    position: relative;
+}
+
+.rectangle h3 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.expand-icon, .close-button {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button {
+    display: none;
+}
+
+.rectangle-expanded .expand-icon {
+    display: none;
+}
+
+.rectangle-expanded .close-button {
+    display: block;
+}
+
+.arrow{
+    display: flex;
+    width: 50px;
+    margin: 60px 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transform: rotate(0deg); /* Arrow pointing to the right */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+@media (max-width: 768px) {
+    .rectangle-container {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .arrow {
+        transform: rotate(90deg); /* Arrow pointing downwards */
+    }
+}
+
+/* Add these classes to the existing styles.css */
+.hidden {
+    display: none;
+}
+
+.rectangle {
+    overflow-y: auto;
+}
+
+/* For WebKit-based browsers (Chrome, Safari) */
+.rectangle::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+.rectangle::-webkit-scrollbar-track {
+    background-color: #735E6F; /* Set the background color of the scrollbar track */
+    border-radius: 10px; /* Add this line to maintain the rounded edges of the rectangle */
+}
+
+.rectangle::-webkit-scrollbar-thumb {
+    background-color: #B27483; /* Set the background color of the scrollbar thumb */
+    border-radius: 4px; /* Round off the edges of the scrollbar thumb */
+}
+
+.rectangle::-webkit-scrollbar-thumb:hover {
+    background-color: #EA917E; /* Change the background color of the scrollbar thumb when hovered */
+}
+
+/* For Firefox */
+.rectangle {
+    scrollbar-color: #e67e22 #f0f; /* Set the scrollbar thumb and track colors */
+    scrollbar-width: thin; /* Set the width of the scrollbar */
+    border-radius: 10px;
+}
+/* Add these classes to the existing styles.css */
+.scroll-section {
+    opacity: 0; /* Set initial position */
+    transform: translateX(-100px);
+    transform: translateY(150px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.scroll-section.is-active {
+    transform: translateX(0px); /* Set initial position */
+    transform: translateY(80px);
+    opacity: 1;
+}
+/* Add these styles to your existing styles.css */
+.rectangle:hover {
+    background-color: #735E6F;
+    transform: scale(1.1); /* Increase size by 10% */
+    transition: background-color 0.5s, transform 1.0s;
+}
+
+.rectangle-expanded {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    z-index: 3;
+    transition: all 0.5s;
+}
+
+.rectangle-expanded:hover {
+    background-color: #735E6F;
+    transition: background-color 0.5s;
+}
+/* Add these classes to the existing styles.css */
+.expandable {
+    background-color: #B27483;
+    border: none;
+    color: white;
+    text-align: left;
+    align-items: center;
+    font-size: 1em;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    min-height: 30px;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+.expandable:hover {
+    background-color: #EA917E; /* Add this line to change the background color on hover */
+    transition: background-color 0.5s;
+}
+
+.expandable li{
+  margin-top: 20px;
+  margin-left: -25px;
+
+}
+
+.expandable:focus {
+    outline: none;
+}
+
+.expandable.expanded {
+    background-color: #B27483;
+}
+
+.details {
+  background-image: linear-gradient(90deg, #735E6F, #B27483, #EA917E, #FFBE6E);
+  border: none;
+  color: white;
+  font-size: 1em;
+  padding: 10px;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  margin-top: 50px;
+  transition: background-position 1s;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 400%;
+  transform: translateX(-40px); /* Set initial position */
+}
+
+.details:hover {
+  background-position: 100% 0;
+}
+
+.details-text {
+  padding: 2px 4px; /* Add this line to add some padding around the text */
+  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black, 0px -1px 0px black; /* Add this line to create a border-like appearance around the text */
+}
+.class-container{
+  justify-content: space-between;
+  display: flex;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+h1.major:after {
+    background-image: linear-gradient(to right, #5e42a6, #b74e91);
+    transition: max-width 0.2s ease;
+    border-radius: 0.2em;
+    bottom: 0;
+    content: '';
+    height: 0.05em;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+h1.major {
+    -webkit-text-size-adjust: none;
+    box-sizing: inherit;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1.5;
+    font-size: 2.75em;
+    margin: 0 0 1.3em 0;
+    position: relative;
+    padding-bottom: 0.35em;
+}
