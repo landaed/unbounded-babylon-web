@@ -177,6 +177,12 @@ input, select, textarea {
 		line-height: 1.75;
 	}
 
+		@media screen and (min-width: 1681px) and (max-width: 2560px) {
+			body, input, select, textarea {
+				font-size: 14pt;
+			}
+		}
+
 		@media screen and (max-width: 1680px) {
 
 			body, input, select, textarea {
@@ -4000,4 +4006,147 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-thumb:hover {
     background-color: #FFC35D; /* Change the background color of the scrollbar thumb when hovered */
+}
+		/* Add a new media query for ultrawide monitors (e.g., 1920px and above) */	
+@media screen and (min-width: 1920px) {
+
+	/* Adjust the font size for body, input, select, and textarea on ultrawide screens */
+	body, input, select, textarea {
+		font-size: 16pt;
+	}
+
+	/* Adjust the padding and margins for rows on ultrawide screens */
+	.row {
+		padding-left: 3em;
+		padding-right: 3em;
+	}
+
+	/* Adjust column widths for ultrawide screens */
+	.row > .col-1-xlarge {
+		width: 6.25%;
+	}
+
+	.row > .off-1-xlarge {
+		margin-left: 6.25%;
+	}
+
+	.row > .col-2-xlarge {
+		width: 12.5%;
+	}
+
+	.row > .off-2-xlarge {
+		margin-left: 12.5%;
+	}
+
+	.row > .col-3-xlarge {
+		width: 18.75%;
+	}
+
+	.row > .off-3-xlarge {
+		margin-left: 18.75%;
+	}
+
+	.row > .col-4-xlarge {
+		width: 25%;
+	}
+
+	.row > .off-4-xlarge {
+		margin-left: 25%;
+	}
+
+	.row > .col-5-xlarge {
+		width: 31.25%;
+	}
+
+	.row > .off-5-xlarge {
+		margin-left: 31.25%;
+	}
+
+	.row > .col-6-xlarge {
+		width: 37.5%;
+	}
+
+	.row > .off-6-xlarge {
+		margin-left: 37.5%;
+	}
+
+	.row > .col-7-xlarge {
+		width: 43.75%;
+	}
+
+	.row > .off-7-xlarge {
+		margin-left: 43.75%;
+	}
+
+	.row > .col-8-xlarge {
+		width: 50%;
+	}
+
+	.row > .off-8-xlarge {
+		margin-left: 50%;
+	}
+
+	.row > .col-9-xlarge {
+		width: 56.25%;
+	}
+
+	.row > .off-9-xlarge {
+		margin-left: 56.25%;
+	}
+
+	.row > .col-10-xlarge {
+		width: 62.5%;
+	}
+
+	.row > .off-10-xlarge {
+		margin-left: 62.5%;
+	}
+
+	.row > .col-11-xlarge {
+		width: 68.75%;
+	}
+
+	.row > .off-11-xlarge {
+		margin-left: 68.75%;
+	}
+
+	.row > .col-12-xlarge {
+		width: 75%;
+	}
+
+	.row > .off-12-xlarge {
+		margin-left: 75%;
+	}
+
+	/* Adjust split styles on ultrawide screens */
+	.split > * {
+		width: calc(50% - 3em);
+	}
+
+	.split > :nth-child(2n - 1) {
+		padding-right: 3em;
+	}
+
+	.split > :nth-child(2n) {
+		padding-left: 3em;
+	}
+
+	.split.style1 > :nth-child(2n - 1) {
+		width: calc(66.66666% - 3em);
+	}
+
+	.split.style1 > :nth-child(2n) {
+		width: calc(33.33333% - 3em);
+	}
+
+	/* Adjust spotlights styles on ultrawide screens */
+	.spotlights > section > .content {
+		padding: 5em 5em 3em 5em;
+	}
+
+	/* Adjust wrapper styles on ultrawide screens */
+	.wrapper > .inner {
+		padding: 5em 5em 3em 5em;
+	}
+
 }
