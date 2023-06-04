@@ -8,6 +8,7 @@ app.use(express.static(path.join(__dirname + '/../'), {
   setHeaders: function (res, path) {
     if (mime.getType(path) === 'text/javascript') {
       res.setHeader('Content-Type', 'text/javascript');
+      res.setHeader('Content-Security-Policy', "script-src 'self' https://cdn.babylonjs.com https://code.jquery.com");
     }
   }
 }));
