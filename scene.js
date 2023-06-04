@@ -142,5 +142,6 @@ engine.runRenderLoop(function () {
 // Resize the canvas when the window is resized
 window.addEventListener("resize", function () {
     engine.resize();
-    engine.resize();
+    // Update the camera's aspect ratio
+
 });

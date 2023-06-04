@@ -13,19 +13,9 @@
 		<link rel="stylesheet" href="assets/css/main.css"/>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
-		<script src="https://assets.babylonjs.com/generated/Assets.js"></script>
-		<script src="https://preview.babylonjs.com/ammo.js"></script>
-		<script src="https://preview.babylonjs.com/cannon.js"></script>
-		<script src="https://preview.babylonjs.com/Oimo.js"></script>
-		<script src="https://preview.babylonjs.com/earcut.min.js"></script>
-		<script src="https://preview.babylonjs.com/babylon.js"></script>
-		<script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
-		<script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
-		<script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
-		<script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
-		<script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
-		<script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
-		<script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+		<script src="https://cdn.babylonjs.com/babylon.js"></script>
+		<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+		<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
 	</head>
 	<body class="is-preload">
 		<header id="header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;">
@@ -46,11 +36,11 @@
 
 			<!-- Intro -->
 			<section id="intro" class="wrapper style1 fullscreen fade-up">
-				<div id="text-overlay" style="margin-left: 10em;">
+				<div id="text-overlay">
 					<h1><a><span class="red">Un</span><img src="images/mirror.png" alt="Description of the image"><span class="blue">bounded</span></a></h1>
 					<p>Research and Development</p>
 					<ul class="actions">
-						<li><a href="#about" class="button scrolly">Learn more</a></li>
+						<li><a href="#about" class="button scrolly" style="margin-left: 30px">Learn more</a></li>
 					</ul>
 				</div>
 				<canvas id="renderCanvas"></canvas>

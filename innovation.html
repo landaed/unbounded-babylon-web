@@ -11,10 +11,12 @@
     <title>Innovation Lab Curricula</title>
     <script>
     function toggleExpandable(event) {
+        event.stopPropagation(); // add this line to stop event propagation
         const expandableContent = event.target.querySelector('ul');
         expandableContent.classList.toggle('hidden');
         event.target.classList.toggle('expanded');
     }
+
 
     function toggleRectangle(event) {
         let rectangle;
@@ -22,7 +24,7 @@
         // If the click event happened on an icon inside the rectangle, find the rectangle
         if (event.target.parentElement.classList.contains('rectangle')) {
             rectangle = event.target.parentElement;
-        } 
+        }
         // Else if the click event happened directly on the rectangle, use it directly
         else if (event.target.classList.contains('rectangle')) {
             rectangle = event.target;
@@ -63,9 +65,43 @@
                     </video>
                 </div>
             </div>
-        </section>    
+        </section>
         <section class="scroll-section">
-            <div class="class-container">    
+            <div class="class-container">
+                <h1>Free Trial</h1>
+                <div class="details">
+                    <a href="documents/Intro to Computer Graphics Free Trial Curriculum.pdf" class="button"><h4>More<h4></a>
+                </div>
+            </div>
+            <h2> In this 1-month mentorship, participants gain expertise in computer graphics, shader programming, and research. They'll work with cutting edge techniques, and learn about the academic landscape of the field of computer graphics science.</h2>
+            <div class="rectangle-container">
+            <div class="rectangle" onclick="toggleRectangle(event)">
+                <i class="fas fa-times close-button"></i>
+                <h3>Core Instruction</h3>
+                <button class="expandable" onclick="toggleExpandable(event)">Description
+                    <ul class="hidden">
+                        <li>Learn the foundations of computer graphics. The technologies and techniques in this section are the foundation of various fields such as game development, VFX, and more.</li>
+                    </ul>
+                </button>
+                <button class="expandable" onclick="toggleExpandable(event)">Learning Outcomes
+                    <ul class="hidden">
+                        <li>Understand the purpose and role of computer graphics in the field of computer science</li>
+                        <li>Develop and analyze shaders</li>
+                    </ul>
+                </button>
+                <button class="expandable" onclick="toggleExpandable(event)">Deliverables
+                    <ul class="hidden">
+                        <li>shader art project</li>
+                        <li>Custom rendered 3D scene project</li>
+                    </ul>
+                </button>
+                <i class="fa-solid fa-up-right-and-down-left-from-center expand-icon"></i>
+            </div>
+
+            </div>
+        </section>
+        <section class="scroll-section">
+            <div class="class-container">
                 <h1>Graphics & AI Curriculum</h1>
                 <div class="details">
                     <a href="documents/Innovation Lab Graphics + AI Curriculum.pdf" class="button"><h4>More<h4></a>
