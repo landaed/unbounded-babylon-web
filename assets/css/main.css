@@ -1629,6 +1629,19 @@ input, select, textarea {
 
 		@media screen and (max-width: 480px) {
 
+			#text-overlay {
+					position: absolute;
+					top: 300px;
+					left: -10%;
+					z-index: 1;
+					padding: 20px;
+					font-family: Arial, Helvetica, sans-serif;
+					font-size: 16.5pt;
+					font-weight: normal;
+					line-height: 1.75;
+					text-align: center;
+			}
+
 			.row {
 				display: flex;
 				flex-wrap: wrap;
@@ -3509,7 +3522,9 @@ input, select, textarea {
 				padding: 1em 2em;
 			}
 
+
 		}
+
 
 		@media screen and (max-width: 480px) {
 
@@ -3537,6 +3552,11 @@ input, select, textarea {
 							height: 6em;
 							line-height: 6em;
 						}
+
+						#header > nav > ul > li a.innovation {
+						    transform: translate(-25px,0px);
+						}
+
 
 		}
 
