@@ -1,0 +1,26 @@
+---
+layout: 'base.njk'
+---
+<!-- Wrapper -->
+<div class="outer-wrapper">
+
+	<!-- Main -->
+	<section id="main" class="wrapper">
+		<div class="inner">
+
+            <article>
+                <div>
+                
+                    <h1>
+                        {{ title }}
+                    </h1>
+                    <figure>
+                        <img src="{{ image }}" alt="{{ imageAlt }}" class="snippet_image">
+                    </figure>
+                
+                    {{ content | safe }}
+                    
+                </div>
+                </article>
+	</section>
+</div>
