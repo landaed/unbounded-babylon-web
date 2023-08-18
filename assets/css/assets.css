@@ -3,8 +3,6 @@
         width: 100%;
         height: 400px;
         transform: translateY(-100px);
-        touch-action: manipulation;
-        user-select: none;
         aspect-ratio: auto 318 / 400;
     }
 }

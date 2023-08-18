@@ -19,7 +19,7 @@ light.intensity = 0.7;
 
 
 // Setup the materials
-var waterfallShader = new BABYLON.ShaderMaterial("shader", scene, "./shaders/waterfall", {
+var waterfallShader = new BABYLON.ShaderMaterial("shader", scene, "./assets/shaders/waterfall", {
   attributes: ["position", "normal", "uv", "colour1", "colour2"],
   uniforms: [
       "world", "worldView", "worldViewProjection", "view",
@@ -32,7 +32,7 @@ waterfallShader.alphaMode = BABYLON.Engine.ALPHA_COMBINE;
 waterfallShader.backFaceCulling = false;
 
 // Setup the materials
-var foamShader = new BABYLON.ShaderMaterial("shader", scene, "./shaders/foam", {
+var foamShader = new BABYLON.ShaderMaterial("shader", scene, "./assets/shaders/foam", {
   attributes: ["position", "normal", "uv", "colour1", "colour2"],
   uniforms: [
       "world", "worldView", "worldViewProjection", "view",
@@ -41,7 +41,7 @@ var foamShader = new BABYLON.ShaderMaterial("shader", scene, "./shaders/foam", {
   defines: ["NORMAL"]
 });
 
-var animeWaterShader = new BABYLON.ShaderMaterial("shader", scene, "./shaders/animeWater", {
+var animeWaterShader = new BABYLON.ShaderMaterial("shader", scene, "./assets/shaders/animeWater", {
   attributes: ["position", "normal", "uv", "colour1", "colour2"],
   uniforms: [
       "world", "worldView", "worldViewProjection", "view",

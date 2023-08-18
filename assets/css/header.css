@@ -75,7 +75,7 @@ a {
   text-decoration: none;
 }
 
-img {
+/* img {
   width: 20px;
   aspect-ratio: auto 20 / 30;
   height: 30px;
@@ -84,7 +84,7 @@ img {
 img {
   overflow-clip-margin: content-box;
   overflow: clip;
-}
+} */
 
 /* Header */
 
@@ -95,7 +95,7 @@ img {
   display: flex;
   background-color: #493382;
   cursor: default;
-  padding: 1.75em 2em;
+  padding: 1em 2em;
   position: fixed;
   top: 0;
   left: 0;
@@ -224,3 +224,20 @@ ul {
   max-height: 500px;
   display: block;
 }
+
+#logo {
+	width: 200px; /* default size */
+	height: auto;
+  }
+  
+  @media only screen and (max-width: 1000px) {
+	#logo {
+	  width: 150px; /* smaller size for smaller screens */
+	}
+  }
+  
+  @media only screen and (max-width: 600px) {
+	#logo {
+	  width: 125px; /* even smaller size for mobile screens */
+	}
+  }

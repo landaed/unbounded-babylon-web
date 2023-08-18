@@ -44,7 +44,7 @@ fireShader.setFloat("radius", .5);
 
 //lowPlyRocks.fbx
 let rocks;
-BABYLON.SceneLoader.ImportMesh("","/assets/models/", "lowPlyRocks.glb", scene, function (newMeshes) {
+BABYLON.SceneLoader.ImportMesh("","./assets/models/", "lowPlyRocks.glb", scene, function (newMeshes) {
   rocks = newMeshes[0];
   rocks.position.x=0;
   rocks.position.y=0;
@@ -52,7 +52,7 @@ BABYLON.SceneLoader.ImportMesh("","/assets/models/", "lowPlyRocks.glb", scene, f
   rocks.scaling.x=1;
   rocks.scaling.y=1;
 });
-BABYLON.SceneLoader.ImportMesh("","/assets/models/", "lowPlyRocks.glb", scene, function (newMeshes) {
+BABYLON.SceneLoader.ImportMesh("","./assets/models/", "lowPlyRocks.glb", scene, function (newMeshes) {
   rocks = newMeshes[0];
   rocks.position.x=1;
   rocks.position.y=1;
@@ -60,7 +60,7 @@ BABYLON.SceneLoader.ImportMesh("","/assets/models/", "lowPlyRocks.glb", scene, f
   rocks.scaling.x=.5;
   rocks.scaling.y=2;
 });
-BABYLON.SceneLoader.ImportMesh("","/assets/models/", "lowPlyRocks.glb", scene, function (newMeshes) {
+BABYLON.SceneLoader.ImportMesh("","./assets/models/", "lowPlyRocks.glb", scene, function (newMeshes) {
   rocks = newMeshes[0];
   rocks.position.x=-1;
   rocks.position.y=1;

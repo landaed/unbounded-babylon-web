@@ -3469,7 +3469,7 @@ input, select, textarea {
 		display: flex;
 		background-color: #493382;
 		cursor: default;
-		padding: 1.75em 2em;
+		padding: 1em 2em;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -3515,7 +3515,6 @@ input, select, textarea {
 						border: 0;
 						color: rgba(255, 255, 255, 0.35);
 						display: inline-block;
-						font-size: 0.6em;
 						font-weight: bold;
 						letter-spacing: 0.25em;
 						text-transform: uppercase;
@@ -4178,6 +4177,12 @@ body::-webkit-scrollbar-thumb:hover {
 	justify-content: center;
 }
 
+@media screen {
+	.research-box {
+	max-height: 10000px;
+	}
+}
+
 .coming-soon {
 	position: relative;
 	left: 50%;
@@ -4330,3 +4335,57 @@ ul.blog > li:first-child {
 		max-width: 40%;
 	  }
   }
+
+  #logo {
+	width: 200px; /* default size */
+	height: auto;
+  }
+  
+  @media only screen and (max-width: 1000px) {
+	#logo {
+	  width: 150px; /* smaller size for smaller screens */
+	}
+  }
+  
+  @media only screen and (max-width: 600px) {
+	#logo {
+	  width: 125px; /* even smaller size for mobile screens */
+	}
+  }
+  
+  
+  div#text-overlay > img#logo {
+	width: 300px; /* default size */
+	height: auto;
+  }
+  
+  @media only screen and (max-width: 1000px) {
+	div#text-overlay > img#logo {
+	  width: 250px; /* smaller size for smaller screens */
+	}
+  }
+  
+  @media only screen and (max-width: 600px) {
+	div#text-overlay > img#logo {
+	  width: 200px; /* even smaller size for mobile screens */
+	}
+  }
+
+  #rnd {
+	transform: translateY(-70px);
+	margin-left: 140px;
+	color: rgba(255, 255, 255, 1);
+  }
+
+  @media screen and (max-width: 736px) {
+	#rnd {
+	  color: rgba(255, 255, 255, 1);
+	  transform: translateY(-20px);
+	  margin-left: 0;
+	}
+  }
+
+.button-float {
+	display: flex;
+	justify-content: space-between;
+}
