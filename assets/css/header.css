@@ -75,7 +75,7 @@ a {
   text-decoration: none;
 }
 
-img {
+/* img {
   width: 20px;
   aspect-ratio: auto 20 / 30;
   height: 30px;
@@ -84,7 +84,7 @@ img {
 img {
   overflow-clip-margin: content-box;
   overflow: clip;
-}
+} */
 
 /* Header */
 
@@ -93,9 +93,16 @@ img {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  background-color: #5e42a6;
+  background-color: #493382;
   cursor: default;
-  padding: 1.75em 2em;
+  padding: 1em 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  justify-content: space-between;
+  align-items: center;
 }
 
   #header > .title {
@@ -147,3 +154,90 @@ img {
           #header > nav > ul > li a.active {
             color: #ffffff;
           }
+
+/* Hamburger */
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #5d40a5;
+}
+
+@media screen and (max-width: 880px) {
+  .menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 99999;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      display: none;
+  background-color: #493382;
+  }
+
+#header > nav {
+  text-align: left;
+}
+
+#header > nav > ul > li a {
+  line-height: normal;
+}
+
+#header > nav > ul > li:first-child {
+  margin: 1em .5em;
+}
+
+#header > nav > ul > li {
+  margin: 1em .5em;
+}
+
+ul {
+  max-height: 500px;
+}
+
+  .hamburger {
+      display: block;
+  }
+}
+
+.menu.show {
+  max-height: 500px;
+  display: block;
+}
+
+#logo {
+	width: 200px; /* default size */
+	height: auto;
+  }
+  
+  @media only screen and (max-width: 1000px) {
+	#logo {
+	  width: 150px; /* smaller size for smaller screens */
+	}
+  }
+  
+  @media only screen and (max-width: 600px) {
+	#logo {
+	  width: 125px; /* even smaller size for mobile screens */
+	}
+  }

@@ -1,32 +1,31 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-
-		<title>Unbounded Research and Development</title>
+		<title>Unbounded Research and Development - Home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css"/>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" href="./assets/css/main.css"/>
+		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
 		<script src="https://cdn.babylonjs.com/babylon.js"></script>
 		<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 		<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
 	</head>
-	<body class="is-preload">
-		<header id="header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;">
-			<a href="index.html"><span class="red">Un</span><img src="images/mirror.png" alt="Description of the image" width="20px" height="30px"><span class="blue">bounded</span></a>
-			<nav>
+	
+	<body>
+		<!-- Header -->
+		<header id="header">
+
+			<a href="/"><img id="logo" src="./assets/images/logo0628.svg" alt="logo"></a>
+			<div class="hamburger">
+				<i class="fas fa-bars"></i>
+			</div>
+			<nav class="menu">
 				<ul>
-					<li><a href="assets.html">Assets</a></li>
-					<li><a href="partner.html">Service</a></li>
-					<li><a href="about_us.html">About</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="services.html">Services</a></li>
+					<li><a href="innovation.html">Innovation</a></li>
 					<li><a href="research.html">Research</a></li>
-					<li><a href="innovation.html" class="innovation">Innovation</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -35,126 +34,118 @@
 		<div id="wrapper">
 
 			<!-- Intro -->
-			<section id="intro" class="wrapper style1 fullscreen fade-up">
+			<section id="intro" class="wrapper style1 fullscreen">
 				<div id="text-overlay">
-					<h1><a><span class="red">Un</span><img src="images/mirror.png" alt="Description of the image"><span class="blue">bounded</span></a></h1>
-					<p>Research and Development</p>
-					<ul class="actions">
-						<li><a href="#about" class="button scrolly">Learn more</a></li>
-					</ul>
+					<img id="logo" src="./assets/images/logo0628.svg" alt="Logo">
+					<p id="rnd">Research and Development</p>
 				</div>
 				<canvas id="renderCanvas"></canvas>
-				<script src="/scene.js"></script>
-			</section>
-
-			<!-- Innovation Lab -->
-			<section class="wrapper style1-alt fade-up">
-				<div class="inner leftMarginAlign">
-					<h2 id="innovation">Innovation Lab</h2>
-						<section>
-							<span class="icon solid major fa-graduation-cap"></span>
-							<h3>Mentorship Program</h3>
-							<p>Unleash your potential with our mentorship programs. Here, knowledge meets innovation, and technical skills intertwine with vital soft skills. Whether it's AI, graphics, or beyond, our tailored approach empowers you to master your field. Click here to explore more and start your transformative journey.</p>
-							<ul class="actions">
-								<li><a href="innovation.html" class="button">Learn more</a></li>
-							</ul>
-						</section>
-					</div>
+				<script src="./assets/js/scene.js"></script>
 			</section>
 
 			<section class="wrapper style2 spotlights">
-
 				<!-- Who We Are -->
 				<section>
-					<a href="#" class="image"><img src="images/SimChopIcon.png" alt="" data-position="center center" /></a>
+					<a href="#" class="image"><img src="./assets/images/SimChopIcon.png" alt="SimChop Icon" data-position="center center" /></a>
 					<div class="content">
 						<div class="inner leftMarginAlign">
 							<h2 id="about">Who We Are</h2>
-							<p>We are a dedicated team of researchers and scientists developing the next generation in computer graphics technology.</p>
+							<p>We are trailblazing researchers and scientists shaping the future of computer graphics technology.</p>
 							<ul class="actions">
-								<li><a href="about_us.html" class="button">Learn more</a></li>
+								<li><a href="about_us.html" class="button">EXPLORE OUR JOURNEY</a></li>
 							</ul>
 						</div>
 					</div>
 				</section>
 
+				<!-- Innovation Lab -->
+				<!-- <section class="wrapper fade-up">
+					<div class="inner leftMarginAlign">
+						<h2 id="innovation">Innovation Lab</h2>
+							<section>
+								<span class="icon solid major fa-graduation-cap"></span>
+								<h3>Mentorship Program</h3>
+								<p>Maximize your potential with our innovative mentorship program. Join our free trial program in computer graphics.</p>
+								<ul class="actions">
+									<li><a href="innovation.html" class="button">EXPLORE THE LAB</a></li>
+								</ul>
+							</section>
+						</div>
+				</section> -->
+
 				<!-- What We Do -->
-				<section class="wrapper style2-alt fade-up">
+				<section class="wrapper">
 					<div class="inner leftMarginAlign">
 						<h2 id="work">What We Do</h2>
-							<section>
+							<!-- <section>
 								<span class="icon solid major fa-cube"></span>
-								<h3>Develop Asset Packs</h3>
-								<p>Developing films and games is hard and time consuming. Not every indie has the time, or knowledge to develop their own shaders and graphics. Thats where we come in.</p>
+								<h3>Asset Pack Development</h3>
+								<p>Developing films and games is complex and time-intensive. Indie developers often lack the time or expertise to create custom shaders and graphics. That's where we step in. We make asset development effortless.</p>
 								<ul class="actions">
-									<li><a href="assets.html" class="button">Learn more</a></li>
+									<li><a href="assets.html" class="button">DISCOVER OUR ASSETS</a></li>
+								</ul>
+							</section> -->
+							<section>
+								<span class="icon solid major fa-graduation-cap"></span>
+								<h3>Mentorship Program</h3>
+								<p>Maximize your potential with our innovative mentorship program. Join our free trial program in computer graphics.</p>
+								<ul class="actions">
+									<li><a href="innovation.html" class="button">EXPLORE THE LAB</a></li>
 								</ul>
 							</section>
 							<section>
 								<span class="icon solid major fa-handshake"></span>
-								<h3>Work With You</h3>
-								<p>We are here to help you and your team meet your graphics needs. We are capabable of working with teams of any size improve or develop their graphics pipelines.</p>
+								<h3>Contracting</h3>
+								<p>We are GPU and graphics specialists, focused on GPU orchestration for HPC data centers. We are capable of working with teams of any size develop innovative solutions.</p>
 								<ul class="actions">
-									<li><a href="partner.html" class="button">Learn more</a></li>
+									<li><a href="services.html" class="button">LET'S COLLABORATE</a></li>
 								</ul>
 							</section>
 							<section>
 								<span class="icon solid major fa-code"></span>
 								<h3>Research</h3>
-								<p>As a research and development company, we have developed several technologies at the cutting edge.</p>
+								<p>We are dedicated to research and development and are proud to have contributed to several innovative technologies in computer graphics.</p>
 								<ul class="actions">
-									<li><a href="research.html" class="button">Learn more</a></li>
+									<li><a href="research.html" class="button">DIVE INTO OUR RESEARCH</a></li>
 								</ul>
 							</section>
 						</div>
 				</section>
 
-			</section>
-
-			<!-- Get in touch -->
-			<section class="wrapper style1 fade-up">
-				<div class="inner leftMarginAlign">
-					<h2 id="contact">Get in touch</h2>
-					<p>We look forward to hearing from you.</p>
-					<section>
-						<ul class="contact">
-							<li>
-								<h3>Address</h3>
-								<span>35887 Marshall Road<br />
-								Abbostford, BC, V3G-1G1<br />
-								Canada</span>
-							</li>
-							<li>
-								<h3>Email</h3>
-								<a href="team@unboundedresearch.dev">team@unboundedresearch.dev</a>
-							</li>
-							<li>
-								<h3>Phone</h3>
-								<span>(604) 309 1867</span>
-							</li>
-						</ul>
-					</section>
-				</div>
+				<!-- Get in touch -->
+				<section class="wrapper style1">
+					<div class="inner leftMarginAlign">
+						<h2 id="contact">Get In Touch</h2>
+						<p>Reach out to us anytime. We're always excited to hear from you.</p>
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Email</h3>
+									<a href="team@unboundedresearch.dev">team@unboundedresearch.dev</a>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</section>
 			</section>
 		</div>
 
 		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Russell Campbell, Eli Landa, Michael Morris. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+		<footer id="footer">
+			<div class="inner">
+				<p>&copy; Unbounded Research And Development Corp. All rights reserved.</p>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+		<script src="./assets/js/jquery.min.js"></script>
+		<script src="./assets/js/jquery.scrollex.min.js"></script>
+		<script src="./assets/js/jquery.scrolly.min.js"></script>
+		<script src="./assets/js/browser.min.js"></script>
+		<script src="./assets/js/breakpoints.min.js"></script>
+		<script src="./assets/js/util.js"></script>
+		<script src="./assets/js/main.js"></script>
+		<script src="./assets/js/hamburger.js"></script>
+		<script src="./assets/js/touch_screen_canvas.js"></script>
 	</body>
 </html>

@@ -28,8 +28,6 @@ body {
     #renderCanvas {
             width: 100%;
             height: 800px;
-            touch-action: manipulation;
-            user-select: none;
     }
 }
 
@@ -1601,42 +1599,6 @@ body {
 
 }
 
-@media screen and (max-width: 736px) {
-
-    #header {
-        padding: 1em 2em;
-    }
-
-}
-
-@media screen and (max-width: 480px) {
-
-    #header {
-        display: block;
-        padding: 0 2em;
-        text-align: left;
-    }
-
-        #header .title {
-            font-size: 1.25em;
-            padding: 1em 0;
-        }
-
-        #header > nav {
-            border-top: solid 1px rgba(255, 255, 255, 0.15);
-            text-align: inherit;
-        }
-
-            #header > nav > ul > li {
-                margin-left: 1.5em;
-            }
-
-                #header > nav > ul > li a {
-                    height: 6em;
-                    line-height: 6em;
-                }
-
-}
 
 @media screen and (max-width: 1280px) {
 
