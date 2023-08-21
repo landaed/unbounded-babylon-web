@@ -4389,3 +4389,48 @@ ul.blog > li:first-child {
 	display: flex;
 	justify-content: space-between;
 }
+
+.link {
+	color:#775bbe;
+}
+
+.innovation {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	max-width: 90%;
+	margin: auto;
+}
+
+.card {
+	flex: 1;
+	border: 2px solid #ccc;
+	padding: 1rem;
+	border-radius: 15px;
+}
+
+.expandable {
+	display: none;
+	margin-top: 1rem;
+  }
+  
+  .card.expanded .expandable {
+	display: block;
+  }
+
+
+@media (min-width: 768px) {
+    .innovation {
+        flex-direction: row; /* Horizontally stacked for larger screens */
+        justify-content: center; /* Centering the div sections */
+		align-items: baseline;
+    }
+
+    .innovation > div {
+        flex: 1; /* This ensures each section takes up equal width */
+    }
+	.card {
+		min-height: 320px;
+	}
+}
