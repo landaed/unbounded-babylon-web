@@ -13,4 +13,3 @@ document.querySelectorAll('.card').forEach(section => {
       }
     });
   });
-  

@@ -1,4 +1,4 @@
-let canvas = document.getElementById('renderCanvas');
+//let canvas = document.getElementById('renderCanvas');
 
 function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
