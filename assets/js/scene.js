@@ -7,14 +7,6 @@ const engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, s
 // Create the scene
 const scene = new BABYLON.Scene(engine);
 scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
-// Load the custom font file
-var fontUrl = "/nulshock/nulshock bd.otf";
-var font = new FontFace("Custom Font", "url(" + fontUrl + ")");
-
-// Register the custom font with the document
-font.load().then(function() {
- document.fonts.add(font);
-});
 
 // Setup the materials
 var waterShader = new BABYLON.ShaderMaterial("shader", scene, "./assets/shaders/water", {
